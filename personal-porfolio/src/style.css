@@ -6,7 +6,7 @@
   --secondary-accent: #1ca6a4;
   --font-main: 'Avenir Next', sans-serif;
   --primary-accent: #ff6a3d;
-  
+
 }
 
 html,
@@ -17,9 +17,25 @@ body,
 
 html {
   scroll-behavior: smooth;
+  font-size: clamp(15px, 0.35vw + 14px, 18px);
 }
 
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+  text-wrap: pretty;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+@media (max-width: 360px) {
+  html {
+    font-size: 14px;
+  }
 }

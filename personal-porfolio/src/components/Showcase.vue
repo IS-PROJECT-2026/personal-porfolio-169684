@@ -43,9 +43,9 @@ const projects = [
     v-if="loading"
     id="projects"
     aria-label="Project Showcase loading"
-    class="relative w-full overflow-hidden bg-[#fefbf5] px-4 py-24 sm:px-6 lg:px-10 lg:py-28"
+    class="relative w-full overflow-hidden bg-[#fefbf5] px-4 py-24 sm:px-6 lg:px-10 lg:py-28 2xl:px-14"
   >
-    <div class="relative z-10 mx-auto w-full max-w-6xl">
+    <div class="relative z-10 mx-auto w-full max-w-7xl">
       <div class="mb-14 space-y-4 md:mb-16">
         <div class="h-4 w-32 animate-pulse rounded bg-slate-200"></div>
         <div class="h-10 w-full max-w-2xl animate-pulse rounded bg-slate-200"></div>
@@ -77,7 +77,7 @@ const projects = [
     v-else
     id="projects"
     aria-label="Project Showcase"
-    class="relative w-full overflow-hidden bg-[#fefbf5] px-4 py-24 text-[#10131a] sm:px-6 lg:px-10 lg:py-28"
+    class="relative w-full overflow-hidden bg-[#fefbf5] px-4 py-24 text-[#10131a] sm:px-6 lg:px-10 lg:py-28 2xl:px-14"
   >
     <!-- Ambient Background Accent -->
     <div
@@ -85,7 +85,7 @@ const projects = [
       class="absolute right-[-10%] top-[20%] aspect-square w-[min(45vw,400px)] rounded-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,106,61,0.08),transparent_65%)] pointer-events-none blur-3xl"
     ></div>
 
-    <div class="relative z-10 mx-auto w-full max-w-6xl">
+    <div class="relative z-10 mx-auto w-full max-w-7xl">
       
       <!-- Section Header -->
       <div class="mb-14 flex flex-col items-start gap-4 md:mb-16 md:items-center md:text-center">
@@ -155,7 +155,7 @@ const projects = [
           href="https://github.com/tyejaedon" 
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-3 rounded-full bg-[#10131a] px-6 py-3 text-[0.95rem] font-bold text-white transition-transform hover:-translate-y-0.5 hover:shadow-lg"
+          class="inline-flex w-full items-center justify-center gap-3 rounded-full bg-[#10131a] px-6 py-3 text-[0.95rem] font-bold text-white transition-transform hover:-translate-y-0.5 hover:shadow-lg min-[430px]:w-auto"
         >
           <!-- GitHub Icon -->
           <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>

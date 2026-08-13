@@ -12,9 +12,9 @@ const props = defineProps({
     v-if="loading"
     id="about"
     aria-label="About section loading"
-    class="relative w-full overflow-hidden bg-[#f4f7fb] px-4 py-24 sm:px-6 lg:px-10 lg:py-28"
+    class="relative w-full overflow-hidden bg-[#f4f7fb] px-4 py-24 sm:px-6 lg:px-10 lg:py-28 2xl:px-14"
   >
-    <div class="relative z-10 mx-auto grid w-full max-w-6xl grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-14">
+    <div class="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-14">
       <div class="space-y-4">
         <div class="h-4 w-32 animate-pulse rounded bg-slate-200"></div>
         <div class="h-10 w-full max-w-xl animate-pulse rounded bg-slate-200"></div>
@@ -36,7 +36,7 @@ const props = defineProps({
     v-else
     id="about"
     aria-label="About Me section"
-    class="relative w-full overflow-hidden bg-[#f4f7fb] px-4 py-24 text-[#10131a] sm:px-6 lg:px-10 lg:py-28"
+    class="relative w-full overflow-hidden bg-[#f4f7fb] px-4 py-24 text-[#10131a] sm:px-6 lg:px-10 lg:py-28 2xl:px-14"
   >
     <!-- Ambient Background Accent -->
     <div
@@ -44,14 +44,14 @@ const props = defineProps({
       class="absolute left-[-10%] top-[-10%] aspect-square w-[min(40vw,350px)] rounded-full bg-[radial-gradient(circle_at_50%_50%,rgba(28,166,164,0.12),transparent_60%)] pointer-events-none blur-3xl"
     ></div>
 
-    <div class="relative z-10 mx-auto grid w-full max-w-6xl grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-14">
+    <div class="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-14">
       
       <!-- Left Column: Narrative -->
       <div class="flex flex-col justify-center">
         <span class="mb-4 text-xs font-bold uppercase tracking-[0.15em] text-[#d64f26]">
           The Journey
         </span>
-        <h2 class="mb-7 text-[clamp(2rem,4vw,3rem)] font-extrabold leading-[1.1] tracking-[-0.03em] text-[#10131a] [font-family:'Avenir_Next','Gill_Sans','Segoe_UI',sans-serif]">
+        <h2 class="mb-7 text-[clamp(2rem,4vw,3rem)] font-extrabold leading-[1.1] tracking-[-0.03em] text-[#10131a] [font-family:'Avenir_Next','Gill_Sans','Segoe_UI',sans-serif] [text-wrap:balance]">
           Engineering at the intersection of hardware and human experience.
         </h2>
         <p class="mb-6 text-[1.05rem] leading-[1.7] text-[#425066]">
