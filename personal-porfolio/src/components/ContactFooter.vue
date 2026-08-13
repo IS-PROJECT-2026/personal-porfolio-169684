@@ -1,0 +1,167 @@
+<script setup>
+const contactMethods = [
+	{
+		title: 'Email',
+		value: 'tyejaedon@gmail.com',
+		href: 'mailto:tyejaedon@gmail.com',
+	},
+	{
+		title: 'Phone',
+		value: '+254 795198008',
+		href: 'tel:+254795198008',
+	},
+	{
+		title: 'Location',
+		value: 'Nairobi, Kenya',
+		href: 'https://maps.google.com/?q=Nairobi,Kenya',
+	},
+]
+
+const socialLinks = [
+	{
+		label: 'GitHub',
+		href: 'https://github.com/tyejaedon',
+	},
+	{
+		label: 'LinkedIn',
+		href: 'https://www.linkedin.com/in/tyejaedon',
+	},
+	{
+		label: 'X / Twitter',
+		href: 'https://x.com/tyejaedon',
+	},
+]
+
+const footerNav = [
+	{ label: 'Home', href: '#home' },
+	{ label: 'About', href: '#about' },
+	{ label: 'Projects', href: '#projects' },
+]
+</script>
+
+<template>
+	<footer
+		id="contact"
+		aria-label="Contact footer"
+		class="relative overflow-hidden bg-[#0f1522] text-white"
+	>
+		<div
+			aria-hidden="true"
+			class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_18%,rgba(255,106,61,0.22),transparent_35%),radial-gradient(circle_at_85%_85%,rgba(28,166,164,0.2),transparent_32%)]"
+		></div>
+
+		<div class="relative mx-auto w-full max-w-6xl px-4 pt-20 pb-12 sm:px-6 lg:px-10 lg:pt-24">
+			<div class="grid gap-9 border-b border-white/15 pb-12 lg:grid-cols-[1.3fr_1fr] lg:gap-12">
+				<div>
+					<p class="text-xs font-bold uppercase tracking-[0.14em] text-[#f7b9a6]">Contact</p>
+					<h2
+						class="mt-4 max-w-[16ch] text-[clamp(2rem,4.2vw,3.6rem)] font-extrabold leading-[1.05] tracking-[-0.03em] [font-family:'Avenir_Next','Gill_Sans','Segoe_UI',sans-serif]"
+					>
+						Let’s design something
+						<span class="bg-gradient-to-r from-[#ff926f] to-[#6dd7d5] bg-clip-text text-transparent">
+							meaningful together.
+						</span>
+					</h2>
+					<p class="mt-5 max-w-[58ch] text-base leading-7 text-[#cdd6e8]">
+						Available for full-time software engineering roles, internships, and high-impact freelance projects.
+						If you have an idea with real users in mind, I would love to hear about it.
+					</p>
+
+					<div class="mt-8 flex flex-wrap gap-3">
+						<a
+							href="mailto:tyejaedon@gmail.com"
+							class="inline-flex items-center gap-2 rounded-full bg-[#ff6a3d] px-5 py-3 text-sm font-bold text-white shadow-[0_10px_28px_rgba(255,106,61,0.3)] transition hover:-translate-y-0.5 hover:bg-[#e85a31]"
+						>
+							Start a Conversation
+							<svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+								<path
+									fill-rule="evenodd"
+									d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414-1.414L13.586 11H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z"
+									clip-rule="evenodd"
+								/>
+							</svg>
+						</a>
+						<a
+							href="#projects"
+							class="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-5 py-3 text-sm font-semibold text-[#dde4f3] transition hover:-translate-y-0.5 hover:border-white/35 hover:bg-white/10"
+						>
+							View My Work
+						</a>
+					</div>
+				</div>
+
+				<div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
+					<div class="rounded-2xl border border-white/15 bg-white/[0.04] p-6 backdrop-blur-sm">
+						<p class="text-xs font-bold uppercase tracking-[0.12em] text-[#9fb0cd]">Direct Contact</p>
+						<ul class="mt-4 space-y-3">
+							<li v-for="item in contactMethods" :key="item.title">
+								<a
+									:href="item.href"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="group flex items-center justify-between gap-3 rounded-xl border border-transparent px-3 py-2 transition hover:border-white/10 hover:bg-white/[0.06]"
+								>
+									<span>
+										<span class="block text-xs font-semibold uppercase tracking-[0.08em] text-[#90a0bd]">
+											{{ item.title }}
+										</span>
+										<span class="block text-sm font-semibold text-[#f7f9ff]">{{ item.value }}</span>
+									</span>
+									<svg
+										class="h-4 w-4 text-[#9fb0cd] transition group-hover:translate-x-0.5 group-hover:text-white"
+										viewBox="0 0 20 20"
+										fill="currentColor"
+										aria-hidden="true"
+									>
+										<path
+											fill-rule="evenodd"
+											d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414-1.414L13.586 11H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z"
+											clip-rule="evenodd"
+										/>
+									</svg>
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="grid gap-5 rounded-2xl border border-white/15 bg-white/[0.04] p-6 backdrop-blur-sm">
+						<div>
+							<p class="text-xs font-bold uppercase tracking-[0.12em] text-[#9fb0cd]">Explore</p>
+							<div class="mt-3 flex flex-wrap gap-2">
+								<a
+									v-for="link in footerNav"
+									:key="link.label"
+									:href="link.href"
+									class="rounded-full border border-white/15 bg-white/[0.03] px-3 py-1.5 text-xs font-semibold text-[#d8deea] transition hover:border-white/35 hover:bg-white/[0.09]"
+								>
+									{{ link.label }}
+								</a>
+							</div>
+						</div>
+
+						<div>
+							<p class="text-xs font-bold uppercase tracking-[0.12em] text-[#9fb0cd]">Social</p>
+							<ul class="mt-3 space-y-2">
+								<li v-for="social in socialLinks" :key="social.label">
+									<a
+										:href="social.href"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="text-sm font-semibold text-[#d8deea] transition hover:text-white"
+									>
+										{{ social.label }}
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="mt-6 flex flex-col gap-2 text-xs text-[#9aa9c5] sm:flex-row sm:items-center sm:justify-between">
+				<p>© 2026 Tyeja Kibui. Crafted in Vue + Tailwind CSS.</p>
+				<p>Designed for performance, accessibility, and clarity.</p>
+			</div>
+		</div>
+	</footer>
+</template>

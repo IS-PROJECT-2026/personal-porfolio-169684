@@ -1,5 +1,5 @@
 <script setup>
-    
+
 const handleAction = (action) => {
   console.log(`Action triggered: ${action}`)
 }
@@ -9,7 +9,7 @@ const handleAction = (action) => {
   <section
     id="home"
     aria-label="Hero section"
-    class="relative grid min-h-[90svh] place-items-center overflow-hidden bg-[radial-gradient(circle_at_12%_15%,rgba(255,106,61,0.18),transparent_45%),radial-gradient(circle_at_88%_25%,rgba(28,166,164,0.18),transparent_40%),linear-gradient(180deg,#fefbf5_0%,#fbf9f4_50%,#f4f7fb_100%)] px-5 py-20 text-[#10131a] md:px-10 md:py-24"
+    class="relative grid min-h-[90svh] place-items-center overflow-hidden bg-[radial-gradient(circle_at_12%_15%,rgba(255,106,61,0.18),transparent_45%),radial-gradient(circle_at_88%_25%,rgba(28,166,164,0.18),transparent_40%),linear-gradient(180deg,#fefbf5_0%,#fbf9f4_50%,#f4f7fb_100%)] px-4 py-24 text-[#10131a] sm:px-6 lg:px-10 lg:py-28"
   >
     <!-- Background Ambient Orbs -->
     <div
@@ -22,10 +22,10 @@ const handleAction = (action) => {
     ></div>
 
     <div
-      class="motion-safe:animate-hero-reveal relative z-10 grid w-full max-w-[1020px] gap-6 text-left"
+      class="motion-safe:animate-hero-reveal relative z-10 grid w-full max-w-6xl gap-8 text-left"
     >
       <!-- Academic & Status Pill -->
-      <div class="flex flex-wrap items-center gap-3">
+      <div class="flex flex-wrap items-center gap-4">
         <span
           class="inline-flex items-center gap-2 rounded-full border border-[rgba(214,79,38,0.2)] bg-white/80 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-[#d64f26] shadow-sm backdrop-blur-md"
         >
@@ -36,7 +36,7 @@ const handleAction = (action) => {
           Software Engineer & Informatics Specialist
         </span>
         <span class="hidden text-xs font-medium text-[#516078] sm:inline-block">
-          Strathmore University '26
+          Strathmore University '27 | Informatics & Computer Science
         </span>
       </div>
 
@@ -57,7 +57,7 @@ const handleAction = (action) => {
       </p>
 
       <!-- Primary Action Buttons -->
-      <div class="mt-2 flex flex-wrap items-center gap-4">
+      <div class="mt-3 flex flex-wrap items-center gap-3 sm:gap-4">
         <button
           type="button"
           class="inline-flex items-center gap-2 rounded-full border border-transparent bg-[#ff6a3d] px-6 py-3.5 text-[0.98rem] font-bold tracking-[0.01em] text-white shadow-[0_10px_28px_rgba(214,79,38,0.3)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#d64f26] hover:shadow-[0_14px_32px_rgba(214,79,38,0.38)] active:translate-y-0"
@@ -76,41 +76,6 @@ const handleAction = (action) => {
         >
           Let's Connect
         </button>
-      </div>
-
-      <!-- Key Capabilities & Stack Highlights -->
-      <div class="mt-6 border-t border-[rgba(16,19,26,0.12)] pt-6">
-        <ul
-          aria-label="Technical focus highlights"
-          class="grid list-none grid-cols-1 gap-4 p-0 sm:grid-cols-3"
-        >
-          <li class="flex flex-col gap-1 rounded-xl bg-white/40 p-3.5 border border-white/60 shadow-sm backdrop-blur-sm">
-            <strong class="text-[clamp(1.35rem,2.5vw,1.75rem)] font-bold leading-none text-[#10131a]">
-              Full-Stack & Mobile
-            </strong>
-            <span class="text-xs font-medium text-[#516078]">
-              Vue, React, Kotlin & Jetpack Compose
-            </span>
-          </li>
-
-          <li class="flex flex-col gap-1 rounded-xl bg-white/40 p-3.5 border border-white/60 shadow-sm backdrop-blur-sm">
-            <strong class="text-[clamp(1.35rem,2.5vw,1.75rem)] font-bold leading-none text-[#10131a]">
-              Systems & Data
-            </strong>
-            <span class="text-xs font-medium text-[#516078]">
-              ML Optimization & Node.js Backends
-            </span>
-          </li>
-
-          <li class="flex flex-col gap-1 rounded-xl bg-white/40 p-3.5 border border-white/60 shadow-sm backdrop-blur-sm">
-            <strong class="text-[clamp(1.35rem,2.5vw,1.75rem)] font-bold leading-none text-[#10131a]">
-              Hardware & IoT
-            </strong>
-            <span class="text-xs font-medium text-[#516078]">
-              ESP32 Microcontrollers & Embedded C
-            </span>
-          </li>
-        </ul>
       </div>
     </div>
   </section>
