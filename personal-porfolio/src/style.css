@@ -2,6 +2,9 @@
 
 :root {
   color-scheme: light;
+
+  --secondary-accent: #1ca6a4;
+  --font-main: 'Avenir Next', sans-serif;
   --primary-accent: #ff6a3d;
   
 }
