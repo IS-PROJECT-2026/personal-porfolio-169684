@@ -1,9 +1,39 @@
 <script setup>
-// AboutSection.vue
+const props = defineProps({
+  loading: {
+    type: Boolean,
+    default: false,
+  },
+})
 </script>
 
 <template>
   <section
+    v-if="loading"
+    id="about"
+    aria-label="About section loading"
+    class="relative w-full overflow-hidden bg-[#f4f7fb] px-4 py-24 sm:px-6 lg:px-10 lg:py-28"
+  >
+    <div class="relative z-10 mx-auto grid w-full max-w-6xl grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-14">
+      <div class="space-y-4">
+        <div class="h-4 w-32 animate-pulse rounded bg-slate-200"></div>
+        <div class="h-10 w-full max-w-xl animate-pulse rounded bg-slate-200"></div>
+        <div class="h-10 w-5/6 animate-pulse rounded bg-slate-200"></div>
+        <div class="h-5 w-full animate-pulse rounded bg-slate-200"></div>
+        <div class="h-5 w-11/12 animate-pulse rounded bg-slate-200"></div>
+        <div class="h-5 w-10/12 animate-pulse rounded bg-slate-200"></div>
+      </div>
+      <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+        <div class="h-36 animate-pulse rounded-2xl bg-slate-200 sm:col-span-2"></div>
+        <div class="h-40 animate-pulse rounded-2xl bg-slate-200"></div>
+        <div class="h-40 animate-pulse rounded-2xl bg-slate-200"></div>
+        <div class="h-28 animate-pulse rounded-2xl bg-slate-200 sm:col-span-2"></div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    v-else
     id="about"
     aria-label="About Me section"
     class="relative w-full overflow-hidden bg-[#f4f7fb] px-4 py-24 text-[#10131a] sm:px-6 lg:px-10 lg:py-28"

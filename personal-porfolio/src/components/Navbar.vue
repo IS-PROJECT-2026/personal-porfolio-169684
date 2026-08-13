@@ -1,6 +1,13 @@
 <script setup>
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 
+const props = defineProps({
+	loading: {
+		type: Boolean,
+		default: false,
+	},
+})
+
 const links = [
 	{ id: 'home', label: 'Home' },
 	{ id: 'about', label: 'About' },
@@ -32,6 +39,10 @@ const setActiveSection = (id) => {
 }
 
 onMounted(() => {
+	if (props.loading) {
+		return
+	}
+
 	updateScrollState()
 	window.addEventListener('scroll', updateScrollState, { passive: true })
 
@@ -77,6 +88,27 @@ onBeforeUnmount(() => {
 				: 'border-b border-transparent bg-transparent px-4 pt-3 sm:px-6 lg:px-10'
 		"
 	>
+		<template v-if="loading">
+			<nav
+				class="mx-auto flex w-full max-w-6xl items-center justify-between rounded-2xl border border-white/50 bg-white/80 px-5 py-3.5 shadow-[0_8px_30px_rgba(16,19,26,0.08)] backdrop-blur-xl sm:px-6 lg:px-8"
+				aria-label="Primary navigation loading"
+			>
+				<div class="flex items-center gap-3">
+					<div class="h-8 w-8 animate-pulse rounded-lg bg-slate-200"></div>
+					<div class="h-4 w-32 animate-pulse rounded bg-slate-200"></div>
+				</div>
+				<div class="hidden items-center gap-3 md:flex">
+					<div class="h-8 w-14 animate-pulse rounded-full bg-slate-200"></div>
+					<div class="h-8 w-16 animate-pulse rounded-full bg-slate-200"></div>
+					<div class="h-8 w-20 animate-pulse rounded-full bg-slate-200"></div>
+					<div class="h-8 w-16 animate-pulse rounded-full bg-slate-200"></div>
+				</div>
+				<div class="h-10 w-11 animate-pulse rounded-lg bg-slate-200 md:hidden"></div>
+				<div class="hidden h-9 w-24 animate-pulse rounded-full bg-slate-200 md:block"></div>
+			</nav>
+		</template>
+
+		<template v-else>
 		<nav
 			class="mx-auto flex w-full max-w-6xl items-center justify-between rounded-2xl border border-white/50 px-5 py-3.5 shadow-[0_8px_30px_rgba(16,19,26,0.08)] backdrop-blur-xl transition-all duration-300 sm:px-6 lg:px-8"
 			:class="
@@ -170,6 +202,7 @@ onBeforeUnmount(() => {
 				</a>
 			</div>
 		</transition>
+		</template>
 	</header>
 </template>
 

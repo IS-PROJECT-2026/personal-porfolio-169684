@@ -1,4 +1,10 @@
 <script setup>
+const props = defineProps({
+  loading: {
+    type: Boolean,
+    default: false,
+  },
+})
 
 const handleAction = (action) => {
   console.log(`Action triggered: ${action}`)
@@ -7,6 +13,30 @@ const handleAction = (action) => {
 
 <template>
   <section
+    v-if="loading"
+    id="home"
+    aria-label="Hero section loading"
+    class="relative grid min-h-[90svh] place-items-center overflow-hidden bg-[linear-gradient(180deg,#fefbf5_0%,#fbf9f4_50%,#f4f7fb_100%)] px-4 py-24 sm:px-6 lg:px-10 lg:py-28"
+  >
+    <div class="relative z-10 grid w-full max-w-6xl gap-8">
+      <div class="h-6 w-64 animate-pulse rounded-full bg-slate-200"></div>
+      <div class="space-y-3">
+        <div class="h-12 w-full max-w-4xl animate-pulse rounded bg-slate-200"></div>
+        <div class="h-12 w-4/5 animate-pulse rounded bg-slate-200"></div>
+      </div>
+      <div class="space-y-3">
+        <div class="h-5 w-full max-w-5xl animate-pulse rounded bg-slate-200"></div>
+        <div class="h-5 w-11/12 animate-pulse rounded bg-slate-200"></div>
+      </div>
+      <div class="flex gap-3">
+        <div class="h-12 w-56 animate-pulse rounded-full bg-slate-200"></div>
+        <div class="h-12 w-40 animate-pulse rounded-full bg-slate-200"></div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    v-else
     id="home"
     aria-label="Hero section"
     class="relative grid min-h-[90svh] place-items-center overflow-hidden bg-[radial-gradient(circle_at_12%_15%,rgba(255,106,61,0.18),transparent_45%),radial-gradient(circle_at_88%_25%,rgba(28,166,164,0.18),transparent_40%),linear-gradient(180deg,#fefbf5_0%,#fbf9f4_50%,#f4f7fb_100%)] px-4 py-24 text-[#10131a] sm:px-6 lg:px-10 lg:py-28"

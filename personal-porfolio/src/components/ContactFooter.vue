@@ -1,4 +1,11 @@
 <script setup>
+const props = defineProps({
+	loading: {
+		type: Boolean,
+		default: false,
+	},
+})
+
 const contactMethods = [
 	{
 		title: 'Email',
@@ -41,6 +48,55 @@ const footerNav = [
 
 <template>
 	<footer
+		v-if="loading"
+		id="contact"
+		aria-label="Contact footer loading"
+		class="relative overflow-hidden bg-[#0f1522] text-white"
+	>
+		<div class="relative mx-auto w-full max-w-6xl px-4 pt-20 pb-12 sm:px-6 lg:px-10 lg:pt-24">
+			<div class="grid gap-9 border-b border-white/15 pb-12 lg:grid-cols-[1.3fr_1fr] lg:gap-12">
+				<div class="space-y-4">
+					<div class="h-4 w-20 animate-pulse rounded bg-slate-500/40"></div>
+					<div class="h-11 w-full max-w-lg animate-pulse rounded bg-slate-500/40"></div>
+					<div class="h-11 w-5/6 animate-pulse rounded bg-slate-500/40"></div>
+					<div class="h-5 w-full max-w-2xl animate-pulse rounded bg-slate-500/40"></div>
+					<div class="h-5 w-11/12 animate-pulse rounded bg-slate-500/40"></div>
+					<div class="flex gap-3 pt-2">
+						<div class="h-11 w-52 animate-pulse rounded-full bg-slate-500/40"></div>
+						<div class="h-11 w-36 animate-pulse rounded-full bg-slate-500/40"></div>
+					</div>
+				</div>
+
+				<div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
+					<div class="rounded-2xl border border-white/15 bg-white/[0.04] p-6">
+						<div class="mb-4 h-4 w-24 animate-pulse rounded bg-slate-500/40"></div>
+						<div class="space-y-3">
+							<div class="h-12 animate-pulse rounded-xl bg-slate-500/40"></div>
+							<div class="h-12 animate-pulse rounded-xl bg-slate-500/40"></div>
+							<div class="h-12 animate-pulse rounded-xl bg-slate-500/40"></div>
+						</div>
+					</div>
+					<div class="rounded-2xl border border-white/15 bg-white/[0.04] p-6">
+						<div class="mb-4 h-4 w-20 animate-pulse rounded bg-slate-500/40"></div>
+						<div class="mb-6 flex gap-2">
+							<div class="h-7 w-16 animate-pulse rounded-full bg-slate-500/40"></div>
+							<div class="h-7 w-16 animate-pulse rounded-full bg-slate-500/40"></div>
+							<div class="h-7 w-20 animate-pulse rounded-full bg-slate-500/40"></div>
+						</div>
+						<div class="mb-3 h-4 w-16 animate-pulse rounded bg-slate-500/40"></div>
+						<div class="space-y-2">
+							<div class="h-4 w-20 animate-pulse rounded bg-slate-500/40"></div>
+							<div class="h-4 w-24 animate-pulse rounded bg-slate-500/40"></div>
+							<div class="h-4 w-28 animate-pulse rounded bg-slate-500/40"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<footer
+		v-else
 		id="contact"
 		aria-label="Contact footer"
 		class="relative overflow-hidden bg-[#0f1522] text-white"

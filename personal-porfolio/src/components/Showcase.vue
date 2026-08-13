@@ -1,5 +1,10 @@
 <script setup>
-// ProjectShowcase.vue
+const props = defineProps({
+  loading: {
+    type: Boolean,
+    default: false,
+  },
+})
 
 // Mapping your actual GitHub repositories from https://github.com/tyejaedon
 const projects = [
@@ -35,6 +40,41 @@ const projects = [
 
 <template>
   <section
+    v-if="loading"
+    id="projects"
+    aria-label="Project Showcase loading"
+    class="relative w-full overflow-hidden bg-[#fefbf5] px-4 py-24 sm:px-6 lg:px-10 lg:py-28"
+  >
+    <div class="relative z-10 mx-auto w-full max-w-6xl">
+      <div class="mb-14 space-y-4 md:mb-16">
+        <div class="h-4 w-32 animate-pulse rounded bg-slate-200"></div>
+        <div class="h-10 w-full max-w-2xl animate-pulse rounded bg-slate-200"></div>
+        <div class="h-5 w-full max-w-3xl animate-pulse rounded bg-slate-200"></div>
+      </div>
+
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-7">
+        <article
+          v-for="index in 3"
+          :key="`skeleton-card-${index}`"
+          class="rounded-2xl border border-[rgba(16,19,26,0.08)] bg-white/60 p-7"
+        >
+          <div class="mb-6 h-4 w-24 animate-pulse rounded bg-slate-200"></div>
+          <div class="mb-3 h-6 w-2/3 animate-pulse rounded bg-slate-200"></div>
+          <div class="mb-2 h-4 w-full animate-pulse rounded bg-slate-200"></div>
+          <div class="mb-6 h-4 w-11/12 animate-pulse rounded bg-slate-200"></div>
+          <div class="mb-5 h-px w-full bg-slate-200"></div>
+          <div class="mb-4 flex gap-2">
+            <div class="h-6 w-16 animate-pulse rounded bg-slate-200"></div>
+            <div class="h-6 w-20 animate-pulse rounded bg-slate-200"></div>
+          </div>
+          <div class="h-5 w-32 animate-pulse rounded bg-slate-200"></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section
+    v-else
     id="projects"
     aria-label="Project Showcase"
     class="relative w-full overflow-hidden bg-[#fefbf5] px-4 py-24 text-[#10131a] sm:px-6 lg:px-10 lg:py-28"
