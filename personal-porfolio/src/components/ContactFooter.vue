@@ -53,7 +53,7 @@ const footerNav = [
 		aria-label="Contact footer loading"
 		class="relative overflow-hidden bg-[#0f1522] text-white"
 	>
-		<div class="relative mx-auto w-full max-w-6xl px-4 pt-20 pb-12 sm:px-6 lg:px-10 lg:pt-24">
+		<div class="relative mx-auto w-full max-w-7xl px-4 pt-20 pb-12 sm:px-6 lg:px-10 lg:pt-24 2xl:px-14">
 			<div class="grid gap-9 border-b border-white/15 pb-12 lg:grid-cols-[1.3fr_1fr] lg:gap-12">
 				<div class="space-y-4">
 					<div class="h-4 w-20 animate-pulse rounded bg-slate-500/40"></div>
@@ -106,7 +106,7 @@ const footerNav = [
 			class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_18%,rgba(255,106,61,0.22),transparent_35%),radial-gradient(circle_at_85%_85%,rgba(28,166,164,0.2),transparent_32%)]"
 		></div>
 
-		<div class="relative mx-auto w-full max-w-6xl px-4 pt-20 pb-12 sm:px-6 lg:px-10 lg:pt-24">
+		<div class="relative mx-auto w-full max-w-7xl px-4 pt-20 pb-12 sm:px-6 lg:px-10 lg:pt-24 2xl:px-14">
 			<div class="grid gap-9 border-b border-white/15 pb-12 lg:grid-cols-[1.3fr_1fr] lg:gap-12">
 				<div>
 					<p class="text-xs font-bold uppercase tracking-[0.14em] text-[#f7b9a6]">Contact</p>
@@ -126,7 +126,7 @@ const footerNav = [
 					<div class="mt-8 flex flex-wrap gap-3">
 						<a
 							href="mailto:tyejaedon@gmail.com"
-							class="inline-flex items-center gap-2 rounded-full bg-[#ff6a3d] px-5 py-3 text-sm font-bold text-white shadow-[0_10px_28px_rgba(255,106,61,0.3)] transition hover:-translate-y-0.5 hover:bg-[#e85a31]"
+							class="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#ff6a3d] px-5 py-3 text-sm font-bold text-white shadow-[0_10px_28px_rgba(255,106,61,0.3)] transition hover:-translate-y-0.5 hover:bg-[#e85a31] min-[430px]:w-auto"
 						>
 							Start a Conversation
 							<svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -139,7 +139,7 @@ const footerNav = [
 						</a>
 						<a
 							href="#projects"
-							class="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-5 py-3 text-sm font-semibold text-[#dde4f3] transition hover:-translate-y-0.5 hover:border-white/35 hover:bg-white/10"
+							class="inline-flex w-full items-center justify-center rounded-full border border-white/20 bg-white/5 px-5 py-3 text-sm font-semibold text-[#dde4f3] transition hover:-translate-y-0.5 hover:border-white/35 hover:bg-white/10 min-[430px]:w-auto"
 						>
 							View My Work
 						</a>

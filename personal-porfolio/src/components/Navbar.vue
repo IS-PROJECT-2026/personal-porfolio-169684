@@ -1,5 +1,5 @@
 <script setup>
-import { onBeforeUnmount, onMounted, ref } from 'vue'
+import { onBeforeUnmount, onMounted, ref, watch } from 'vue'
 
 const props = defineProps({
 	loading: {
@@ -20,29 +20,14 @@ const isScrolled = ref(false)
 const activeSection = ref('home')
 
 let observer
+let navInitialized = false
 
-const closeMenu = () => {
-	menuOpen.value = false
-}
-
-const toggleMenu = () => {
-	menuOpen.value = !menuOpen.value
-}
-
-const updateScrollState = () => {
-	isScrolled.value = window.scrollY > 18
-}
-
-const setActiveSection = (id) => {
-	activeSection.value = id
-	closeMenu()
-}
-
-onMounted(() => {
-	if (props.loading) {
+const initNavbarState = () => {
+	if (navInitialized || props.loading) {
 		return
 	}
 
+	navInitialized = true
 	updateScrollState()
 	window.addEventListener('scroll', updateScrollState, { passive: true })
 
@@ -69,7 +54,37 @@ onMounted(() => {
 			observer.observe(section)
 		}
 	})
+}
+
+const closeMenu = () => {
+	menuOpen.value = false
+}
+
+const toggleMenu = () => {
+	menuOpen.value = !menuOpen.value
+}
+
+const updateScrollState = () => {
+	isScrolled.value = window.scrollY > 18
+}
+
+const setActiveSection = (id) => {
+	activeSection.value = id
+	closeMenu()
+}
+
+onMounted(() => {
+	initNavbarState()
 })
+
+watch(
+	() => props.loading,
+	(loading) => {
+		if (!loading) {
+			initNavbarState()
+		}
+	},
+)
 
 onBeforeUnmount(() => {
 	window.removeEventListener('scroll', updateScrollState)
@@ -84,13 +99,13 @@ onBeforeUnmount(() => {
 		class="fixed inset-x-0 top-0 z-50 transition-all duration-300"
 		:class="
 			isScrolled
-				? 'px-4 pt-4 sm:px-6 lg:px-10'
-				: 'border-b border-transparent bg-transparent px-4 pt-3 sm:px-6 lg:px-10'
+				? 'px-3 pt-3 sm:px-6 lg:px-10 2xl:px-14'
+				: 'border-b border-transparent bg-transparent px-3 pt-2.5 sm:px-6 lg:px-10 2xl:px-14'
 		"
 	>
 		<template v-if="loading">
 			<nav
-				class="mx-auto flex w-full max-w-6xl items-center justify-between rounded-2xl border border-white/50 bg-white/80 px-5 py-3.5 shadow-[0_8px_30px_rgba(16,19,26,0.08)] backdrop-blur-xl sm:px-6 lg:px-8"
+				class="mx-auto flex w-full max-w-7xl items-center justify-between rounded-2xl border border-white/50 bg-white/80 px-4 py-3 shadow-[0_8px_30px_rgba(16,19,26,0.08)] backdrop-blur-xl sm:px-6 lg:px-8"
 				aria-label="Primary navigation loading"
 			>
 				<div class="flex items-center gap-3">
@@ -110,7 +125,7 @@ onBeforeUnmount(() => {
 
 		<template v-else>
 		<nav
-			class="mx-auto flex w-full max-w-6xl items-center justify-between rounded-2xl border border-white/50 px-5 py-3.5 shadow-[0_8px_30px_rgba(16,19,26,0.08)] backdrop-blur-xl transition-all duration-300 sm:px-6 lg:px-8"
+			class="mx-auto flex w-full max-w-7xl items-center justify-between rounded-2xl border border-white/50 px-4 py-3 shadow-[0_8px_30px_rgba(16,19,26,0.08)] backdrop-blur-xl transition-all duration-300 sm:px-6 lg:px-8"
 			:class="
 				isScrolled
 					? 'bg-white/86 ring-1 ring-black/5'
@@ -128,7 +143,7 @@ onBeforeUnmount(() => {
 				>
 					JM
 				</span>
-				<span class="text-sm font-bold tracking-[0.08em] text-[#172033] sm:text-base">
+				<span class="hidden text-sm font-bold tracking-[0.08em] text-[#172033] min-[430px]:inline sm:text-base">
                     Jaedon Munyua
 				</span>
 			</a>
@@ -184,7 +199,7 @@ onBeforeUnmount(() => {
 		>
 			<div
 				v-if="menuOpen"
-				class="mx-auto mt-3 w-full max-w-6xl rounded-2xl border border-white/60 bg-white/92 p-3 shadow-[0_12px_35px_rgba(16,19,26,0.1)] backdrop-blur-xl md:hidden"
+				class="mx-auto mt-2.5 w-full max-w-7xl rounded-2xl border border-white/60 bg-white/92 p-3 shadow-[0_12px_35px_rgba(16,19,26,0.1)] backdrop-blur-xl md:hidden"
 			>
 				<a
 					v-for="link in links"

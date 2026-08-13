@@ -16,9 +16,9 @@ const handleAction = (action) => {
     v-if="loading"
     id="home"
     aria-label="Hero section loading"
-    class="relative grid min-h-[90svh] place-items-center overflow-hidden bg-[linear-gradient(180deg,#fefbf5_0%,#fbf9f4_50%,#f4f7fb_100%)] px-4 py-24 sm:px-6 lg:px-10 lg:py-28"
+    class="relative grid min-h-[90svh] place-items-center overflow-hidden bg-[linear-gradient(180deg,#fefbf5_0%,#fbf9f4_50%,#f4f7fb_100%)] px-4 py-24 sm:px-6 lg:px-10 lg:py-28 2xl:px-14"
   >
-    <div class="relative z-10 grid w-full max-w-6xl gap-8">
+    <div class="relative z-10 grid w-full max-w-7xl gap-8">
       <div class="h-6 w-64 animate-pulse rounded-full bg-slate-200"></div>
       <div class="space-y-3">
         <div class="h-12 w-full max-w-4xl animate-pulse rounded bg-slate-200"></div>
@@ -39,7 +39,7 @@ const handleAction = (action) => {
     v-else
     id="home"
     aria-label="Hero section"
-    class="relative grid min-h-[90svh] place-items-center overflow-hidden bg-[radial-gradient(circle_at_12%_15%,rgba(255,106,61,0.18),transparent_45%),radial-gradient(circle_at_88%_25%,rgba(28,166,164,0.18),transparent_40%),linear-gradient(180deg,#fefbf5_0%,#fbf9f4_50%,#f4f7fb_100%)] px-4 py-24 text-[#10131a] sm:px-6 lg:px-10 lg:py-28"
+    class="relative grid min-h-[90svh] place-items-center overflow-hidden bg-[radial-gradient(circle_at_12%_15%,rgba(255,106,61,0.18),transparent_45%),radial-gradient(circle_at_88%_25%,rgba(28,166,164,0.18),transparent_40%),linear-gradient(180deg,#fefbf5_0%,#fbf9f4_50%,#f4f7fb_100%)] px-4 py-24 text-[#10131a] sm:px-6 lg:px-10 lg:py-28 2xl:px-14"
   >
     <!-- Background Ambient Orbs -->
     <div
@@ -52,7 +52,7 @@ const handleAction = (action) => {
     ></div>
 
     <div
-      class="motion-safe:animate-hero-reveal relative z-10 grid w-full max-w-6xl gap-8 text-left"
+      class="motion-safe:animate-hero-reveal relative z-10 grid w-full max-w-7xl gap-8 text-left"
     >
       <!-- Academic & Status Pill -->
       <div class="flex flex-wrap items-center gap-4">
@@ -90,7 +90,7 @@ const handleAction = (action) => {
       <div class="mt-3 flex flex-wrap items-center gap-3 sm:gap-4">
         <button
           type="button"
-          class="inline-flex items-center gap-2 rounded-full border border-transparent bg-[#ff6a3d] px-6 py-3.5 text-[0.98rem] font-bold tracking-[0.01em] text-white shadow-[0_10px_28px_rgba(214,79,38,0.3)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#d64f26] hover:shadow-[0_14px_32px_rgba(214,79,38,0.38)] active:translate-y-0"
+          class="inline-flex w-full items-center justify-center gap-2 rounded-full border border-transparent bg-[#ff6a3d] px-6 py-3.5 text-[0.98rem] font-bold tracking-[0.01em] text-white shadow-[0_10px_28px_rgba(214,79,38,0.3)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#d64f26] hover:shadow-[0_14px_32px_rgba(214,79,38,0.38)] active:translate-y-0 min-[430px]:w-auto"
           @click="handleAction('projects')"
         >
           <span>Explore Featured Work</span>
@@ -101,7 +101,7 @@ const handleAction = (action) => {
 
         <button
           type="button"
-          class="rounded-full border border-[rgba(16,19,26,0.18)] bg-white/80 px-6 py-3.5 text-[0.98rem] font-bold tracking-[0.01em] text-[#10131a] backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5 hover:border-[rgba(16,19,26,0.3)] hover:bg-white hover:shadow-[0_8px_24px_rgba(16,19,26,0.12)] active:translate-y-0"
+          class="w-full rounded-full border border-[rgba(16,19,26,0.18)] bg-white/80 px-6 py-3.5 text-[0.98rem] font-bold tracking-[0.01em] text-[#10131a] backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5 hover:border-[rgba(16,19,26,0.3)] hover:bg-white hover:shadow-[0_8px_24px_rgba(16,19,26,0.12)] active:translate-y-0 min-[430px]:w-auto"
           @click="handleAction('contact')"
         >
           Let's Connect
