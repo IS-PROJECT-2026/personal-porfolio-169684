@@ -2,8 +2,11 @@
 
 :root {
   color-scheme: light;
-  --primary-accent: #1ca6a4;
+
+  --secondary-accent: #1ca6a4;
   --font-main: 'Avenir Next', sans-serif;
+  --primary-accent: #ff6a3d;
+  
 }
 
 html,
