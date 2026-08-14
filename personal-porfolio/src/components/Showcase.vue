@@ -5,6 +5,28 @@ const props = defineProps({
     default: false,
   },
 })
+
+// The Structured Data Array
+const projects = [
+  {
+    id: 1,
+    category: 'Native Mobile',
+    title: 'TigerPlayer',
+    description: 'A high-fidelity, performance-oriented Android music player built for enthusiasts.',
+    techStack: ['Kotlin', 'Android', 'Glassmorphism'],
+    accent: 'bg-[#ff6a3d]',
+    link: 'https://github.com/tyejaedon/TigerPlayer'
+  },
+  {
+    id: 2,
+    category: 'Full-Stack Web',
+    title: 'Waste Connect (ICS-PROJECT-1)',
+    description: 'A digital solution designed to bridge the gap between citizens and waste management authorities.',
+    techStack: ['JavaScript', 'Web Architecture', 'Sustainability'],
+    accent: 'bg-[#1ca6a4]',
+    link: 'https://github.com/tyejaedon/ICS-PROJECT-1'
+  }
+]
 </script>
 
 <template>
@@ -23,11 +45,13 @@ const props = defineProps({
         </h2>
       </div>
 
-      <!-- STATIC HTML CARDS (Branch A modifies these) -->
+
       <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-7">
-        
-        <!-- Deliberate Modification to trigger conflict -->
-        <article class="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-[rgba(16,19,26,0.08)] bg-white/60 p-7 shadow-sm">
+        <article 
+          v-for="project in projects" 
+          :key="project.id"
+          class="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-[rgba(16,19,26,0.08)] bg-white/60 p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+        >
           <div>
             <div class="mb-5 flex items-center justify-between">
               <span class="text-xs font-bold tracking-wider text-[#516078] uppercase">Native Mobile</span>
@@ -40,22 +64,8 @@ const props = defineProps({
             </p>
           </div>
         </article>
-        
-        <article class="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-[rgba(16,19,26,0.08)] bg-white/60 p-7 shadow-sm">
-          <div>
-            <div class="mb-5 flex items-center justify-between">
-              <span class="text-xs font-bold tracking-wider text-[#516078] uppercase">Full-Stack Web</span>
-            </div>
-            <h3 class="mb-3 text-xl font-bold leading-tight text-[#10131a]">
-              Waste Connect
-            </h3>
-            <p class="mb-8 text-sm leading-[1.6] text-[#425066]">
-              A digital solution designed to bridge the gap between citizens and authorities.
-            </p>
-          </div>
-        </article>
-
       </div>
+
     </div>
   </section>
 </template>
