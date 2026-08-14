@@ -54,16 +54,13 @@ const projects = [
         >
           <div>
             <div class="mb-5 flex items-center justify-between">
-              <span class="text-xs font-bold tracking-wider text-[#516078] uppercase">
-                {{ project.category }}
-              </span>
-              <span :class="['h-2.5 w-2.5 rounded-full', project.accent]"></span>
+              <span class="text-xs font-bold tracking-wider text-[#516078] uppercase">Native Mobile</span>
             </div>
             <h3 class="mb-3 text-xl font-bold leading-tight text-[#10131a]">
-              {{ project.title }}
+              TigerPlayer (Version 2.0)
             </h3>
             <p class="mb-8 text-sm leading-[1.6] text-[#425066]">
-              {{ project.description }}
+              A high-fidelity, performance-oriented Android music player built for enthusiasts.
             </p>
           </div>
         </article>
