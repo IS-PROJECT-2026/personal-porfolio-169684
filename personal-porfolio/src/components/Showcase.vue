@@ -69,6 +69,7 @@ const projects = [
           </div>
           <div class="h-5 w-32 animate-pulse rounded bg-slate-200"></div>
         </article>
+        
       </div>
     </div>
   </section>
@@ -90,6 +91,9 @@ const projects = [
       <!-- Section Header -->
       <div class="mb-14 flex flex-col items-start gap-4 md:mb-16 md:items-center md:text-center">
         <span class="text-xs font-bold uppercase tracking-[0.15em] text-[#1ca6a4]">
+          Featured Work
+        </span>
+         <span class="text-xs font-bold uppercase tracking-[0.15em] text-[#1ca6a4]">
           Featured Work
         </span>
         <h2 class="text-[clamp(2rem,4vw,3rem)] font-extrabold leading-[1.1] tracking-[-0.03em] text-[#10131a] [font-family:'Avenir_Next','Gill_Sans','Segoe_UI',sans-serif]">
