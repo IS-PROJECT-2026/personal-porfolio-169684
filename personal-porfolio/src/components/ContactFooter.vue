@@ -1,10 +1,80 @@
 <script setup>
+import { reactive, ref } from 'vue'
+
 const props = defineProps({
 	loading: {
 		type: Boolean,
 		default: false,
 	},
 })
+
+const formData = reactive({
+	name: '',
+	email: '',
+	message: '',
+})
+
+const errors = reactive({
+	name: '',
+	email: '',
+	message: '',
+})
+
+const formStatus = ref({
+	type: '',
+	message: '',
+})
+
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+const validateForm = () => {
+	errors.name = formData.name.trim() ? '' : 'Please enter your name.'
+
+	if (!formData.email.trim()) {
+		errors.email = 'Please enter your email address.'
+	} else if (!emailPattern.test(formData.email.trim())) {
+		errors.email = 'Please enter a valid email address.'
+	} else {
+		errors.email = ''
+	}
+
+	if (!formData.message.trim()) {
+		errors.message = 'Please enter a message.'
+	} else if (formData.message.trim().length < 10) {
+		errors.message = 'Message should be at least 10 characters long.'
+	} else {
+		errors.message = ''
+	}
+
+	return !errors.name && !errors.email && !errors.message
+}
+
+const clearStatus = () => {
+	if (formStatus.value.message) {
+		formStatus.value = { type: '', message: '' }
+	}
+}
+
+const handleSubmit = () => {
+	const isValid = validateForm()
+
+	if (!isValid) {
+		formStatus.value = {
+			type: 'error',
+			message: 'Please fix the highlighted fields and try again.',
+		}
+		return
+	}
+
+	formStatus.value = {
+		type: 'success',
+		message: 'Thanks for reaching out. Your message is ready to be sent.',
+	}
+
+	formData.name = ''
+	formData.email = ''
+	formData.message = ''
+}
 
 const contactMethods = [
 	{
@@ -147,6 +217,74 @@ const footerNav = [
 				</div>
 
 				<div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
+					<form
+						novalidate
+						class="rounded-2xl border border-white/15 bg-white/[0.04] p-6 backdrop-blur-sm"
+						@submit.prevent="handleSubmit"
+					>
+						<p class="text-xs font-bold uppercase tracking-[0.12em] text-[#9fb0cd]">Quick Message</p>
+						<div class="mt-4 grid gap-3">
+							<div>
+								<label for="contact-name" class="mb-1 block text-xs font-semibold text-[#d8deea]">Name</label>
+								<input
+									id="contact-name"
+									v-model="formData.name"
+									type="text"
+									autocomplete="name"
+									class="w-full rounded-xl border bg-[#121a2a] px-3 py-2 text-sm text-white outline-none transition placeholder:text-[#7f8fab] focus:ring-2 focus:ring-[#ff6a3d]/60"
+									:class="errors.name ? 'border-[#f78282]' : 'border-white/15'"
+									placeholder="Your name"
+									@input="clearStatus"
+								/>
+								<p v-if="errors.name" class="mt-1 text-xs text-[#fda4a4]">{{ errors.name }}</p>
+							</div>
+
+							<div>
+								<label for="contact-email" class="mb-1 block text-xs font-semibold text-[#d8deea]">Email</label>
+								<input
+									id="contact-email"
+									v-model="formData.email"
+									type="email"
+									autocomplete="email"
+									class="w-full rounded-xl border bg-[#121a2a] px-3 py-2 text-sm text-white outline-none transition placeholder:text-[#7f8fab] focus:ring-2 focus:ring-[#ff6a3d]/60"
+									:class="errors.email ? 'border-[#f78282]' : 'border-white/15'"
+									placeholder="you@example.com"
+									@input="clearStatus"
+								/>
+								<p v-if="errors.email" class="mt-1 text-xs text-[#fda4a4]">{{ errors.email }}</p>
+							</div>
+
+							<div>
+								<label for="contact-message" class="mb-1 block text-xs font-semibold text-[#d8deea]">Message</label>
+								<textarea
+									id="contact-message"
+									v-model="formData.message"
+									rows="4"
+									class="w-full rounded-xl border bg-[#121a2a] px-3 py-2 text-sm text-white outline-none transition placeholder:text-[#7f8fab] focus:ring-2 focus:ring-[#ff6a3d]/60"
+									:class="errors.message ? 'border-[#f78282]' : 'border-white/15'"
+									placeholder="Tell me a little about your project"
+									@input="clearStatus"
+								></textarea>
+								<p v-if="errors.message" class="mt-1 text-xs text-[#fda4a4]">{{ errors.message }}</p>
+							</div>
+
+							<button
+								type="submit"
+								class="inline-flex items-center justify-center rounded-full bg-[#ff6a3d] px-4 py-2 text-sm font-bold text-white transition hover:bg-[#e85a31]"
+							>
+								Validate Message
+							</button>
+
+							<p
+								v-if="formStatus.message"
+								class="text-xs"
+								:class="formStatus.type === 'success' ? 'text-[#8ee6ba]' : 'text-[#fda4a4]'"
+							>
+								{{ formStatus.message }}
+							</p>
+						</div>
+					</form>
+
 					<div class="rounded-2xl border border-white/15 bg-white/[0.04] p-6 backdrop-blur-sm">
 						<p class="text-xs font-bold uppercase tracking-[0.12em] text-[#9fb0cd]">Direct Contact</p>
 						<ul class="mt-4 space-y-3">
