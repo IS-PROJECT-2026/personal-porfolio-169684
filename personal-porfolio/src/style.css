@@ -7,6 +7,11 @@
   --color-text-main: #10131a;
 }
 
+.dark-mode {
+  --bg-color: #10131a;
+  --text-color: #fefbf5;
+}
+
 html,
 body,
 #app {
