@@ -63,7 +63,8 @@ const props = defineProps({
       </div>
 
       <!-- Right Column: Tech Stack Bento Grid -->
-      <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+      <div>
+        <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <!-- Academic Card -->
         <div class="col-span-1 flex flex-col justify-between rounded-2xl border border-[rgba(16,19,26,0.08)] bg-white/60 p-7 shadow-sm backdrop-blur-md sm:col-span-2">
           <svg class="mb-4 h-6 w-6 text-[#1ca6a4]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -94,6 +95,21 @@ const props = defineProps({
             <span class="rounded-full bg-[#ff6a3d]/20 px-2.5 py-1 text-xs font-bold tracking-wider text-[#ff6a3d]">EMBEDDED</span>
           </div>
           <p class="text-sm font-medium text-gray-300">ESP32 Microcontrollers & NodeMCU</p>
+        </div>
+
+        </div>
+
+        <!-- Bonus Stat Card Section -->
+        <div class="mt-10 flex flex-col items-center">
+          <h3 class="mb-4 text-lg font-bold text-[#10131a]">Coding Streak & Activity Metrics</h3>
+          <div class="flex justify-center rounded-2xl border border-[rgba(16,19,26,0.08)] bg-white/60 p-6 shadow-sm backdrop-blur-md">
+            <img
+              src="https://streak-stats.demolab.com?user=tyejaedon&theme=transparent&hide_border=true&stroke=10131a&side_ts=10131a&fire=ff6a3d&ring=1ca6a4"
+              alt="GitHub Streak Card"
+              class="h-auto w-full max-w-full rounded-lg"
+              loading="lazy"
+            />
+          </div>
         </div>
       </div>
 
