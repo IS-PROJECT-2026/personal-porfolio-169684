@@ -1,12 +1,10 @@
 @import 'tailwindcss';
 
 :root {
-  color-scheme: light;
-
-  --secondary-accent: #1ca6a4;
-  --font-main: 'Avenir Next', sans-serif;
-  --primary-accent: #ff6a3d;
-
+  --color-brand-primary: #ff6a3d;
+  --color-brand-secondary: #1ca6a4;
+  --color-background-base: #fefbf5;
+  --color-text-main: #10131a;
 }
 
 html,
