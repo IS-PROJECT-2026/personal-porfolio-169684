@@ -1,10 +1,10 @@
 @import 'tailwindcss';
 
 :root {
-  --primary-accent: #ff6a3d;
-  --secondary-accent: #1ca6a4;
-  --bg-color: #fefbf5;
-  --text-color: #10131a;
+  --color-brand-primary: #ff6a3d;
+  --color-brand-secondary: #1ca6a4;
+  --color-background-base: #fefbf5;
+  --color-text-main: #10131a;
 }
 
 .dark-mode {
